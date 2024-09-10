@@ -3,6 +3,12 @@ package com.coding.codingtest.stackandqueue;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * 프로그래머스 알고리즘 고득점 kit
+ * 스택/큐
+ * 올바른괄호
+ * https://school.programmers.co.kr/learn/courses/30/lessons/12909
+ * */
 public class ProperRoundBrackets {
     public static void main(String[] args) {
         System.out.println(solution("()()"));

@@ -2,6 +2,9 @@ package com.coding.codingtest.example;
 
 import java.util.Stack;
 
+/**
+ * 스택 자료구조 예제
+ * */
 public class StackExample {
     public static void main(String[] args) {
         Stack<Integer> stack = new Stack<>();

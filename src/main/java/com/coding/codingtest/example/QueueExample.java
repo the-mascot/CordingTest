@@ -3,6 +3,9 @@ package com.coding.codingtest.example;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * 큐 자료구조 예제
+ * */
 public class QueueExample {
     public static void main(String[] args) {
         Queue<Integer> queue = new LinkedList<>();
