@@ -1,4 +1,4 @@
-package com.coding.codingtest.example;
+package com.coding.codingtest.example.stackandqueue;
 
 import java.util.Stack;
 
