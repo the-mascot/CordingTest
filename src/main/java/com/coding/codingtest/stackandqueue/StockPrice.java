@@ -1,5 +1,6 @@
 package com.coding.codingtest.stackandqueue;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 /**
@@ -11,23 +12,26 @@ import java.util.Stack;
 public class StockPrice {
     public static void main(String[] args) {
         int[] prices = new int[]{1, 2, 3, 2, 3};
-        System.out.println(solution(prices));
+        System.out.println(Arrays.toString(solution(prices)));
     }
 
     public static int[] solution(int[] prices) {
-        Stack<Integer> stack = new Stack<>();
-        int[] answer = new int[prices.length];
-        for (int i = 0; i < prices.length; i++) {
-            stack.push(prices[i]);
+        int n = prices.length;
+        int[] answer = new int[n];
+        Stack<Integer> stack = new Stack<>();   // 인덱스를 저장할 스텍
+
+        // 스텍에 가격을 넣는게 아니라 반복 인덱스를 넣어주는게 키 포인트
+        for (int i = 0; i < n; i++) {
+            while (!stack.isEmpty() && prices[stack.peek()] > prices[i]) {
+                int idx = stack.pop();
+                answer[idx] = i - idx;
+            }
+            stack.push(i);
         }
 
         while (!stack.isEmpty()) {
-            stack.pop();
-            for (int i = stack.size() - 2; i >= 0; i--) {
-                answer[i] <
-                answer[i] = answer[i] + 1;
-            }
-
+            int idx = stack.pop();
+            answer[idx] = n -1 - idx;
         }
 
         return answer;
