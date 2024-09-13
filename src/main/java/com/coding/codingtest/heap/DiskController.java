@@ -1,6 +1,8 @@
 package com.coding.codingtest.heap;
 
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 import java.util.PriorityQueue;
 
 public class DiskController {
@@ -14,7 +16,7 @@ public class DiskController {
     }
 
     public static int solution(int[][] jobs) {
-        int answer = 0;
+        List<Integer> timeList = new ArrayList<>();
         PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> Integer.compare(a[0], b[0]));
 
         for (int[] job : jobs) {
@@ -23,14 +25,16 @@ public class DiskController {
         int count = 0;
 
         while (pq.isEmpty()) {
-            int[] pollJob = pq.poll();
-            if (count - pq.peek()[0] < count - pollJob[0]) {
-                pq.offer(pollJob);
-                count += pq.poll()[1];
+            int[] job = pq.poll();
+            if (count - pq.peek()[0] < count - job[0]) {
+                pq.offer(job);
+                int[] nextJob = pq.poll();
+                count += nextJob[1];
+                timeList.add(count - nextJob[0]);
             } else {
-                count += pollJob[1];
+                count += job[1];
+                timeList.a
             }
-
         }
 
 
